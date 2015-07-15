@@ -1,22 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="KeyBoardUpField" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCA-pb-WHD">
+                                <rect key="frame" x="0.0" y="450" width="320" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBu-2u-VFI">
+                                        <rect key="frame" x="8" y="0.0" width="258" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4O2-rT-WYO">
+                                        <rect key="frame" x="274" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4O2-rT-WYO" secondAttribute="height" multiplier="23:15" id="HSv-on-D4c"/>
+                                        </constraints>
+                                        <state key="normal" title="Send">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSend:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="usd-mS-tW5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4O2-rT-WYO" firstAttribute="top" secondItem="mCA-pb-WHD" secondAttribute="top" id="KBA-Re-FBs"/>
+                                    <constraint firstItem="4O2-rT-WYO" firstAttribute="leading" secondItem="kBu-2u-VFI" secondAttribute="trailing" constant="8" id="aGe-H2-MN7"/>
+                                    <constraint firstItem="kBu-2u-VFI" firstAttribute="leading" secondItem="mCA-pb-WHD" secondAttribute="leading" constant="8" id="haL-6M-9mL"/>
+                                    <constraint firstItem="kBu-2u-VFI" firstAttribute="top" secondItem="mCA-pb-WHD" secondAttribute="top" id="l4g-39-Stg"/>
+                                    <constraint firstAttribute="bottom" secondItem="kBu-2u-VFI" secondAttribute="bottom" id="ndY-Y7-6Ty"/>
+                                    <constraint firstAttribute="bottom" secondItem="4O2-rT-WYO" secondAttribute="bottom" id="p43-RB-lLp"/>
+                                    <constraint firstAttribute="height" constant="30" id="uS2-oI-zkp"/>
+                                    <constraint firstAttribute="trailing" secondItem="4O2-rT-WYO" secondAttribute="trailing" id="zIL-dc-yzL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ays-Xx-d85" customClass="NumberKitView" customModule="KeyBoardUpField" customModuleProvider="target">
+                                <rect key="frame" x="135" y="368" width="50" height="74"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="frl-qQ-iCu"/>
+                                    <constraint firstAttribute="height" constant="74" id="zMG-7C-SKa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="0.23987084989999999" blue="0.28214409699999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backGroundColor">
+                                        <color key="value" red="1" green="0.55294117649999996" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L90-GZ-YrA">
+                                <rect key="frame" x="228" y="390" width="22" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Ncp-Rr-CeK"/>
+                                    <constraint firstAttribute="width" constant="22" id="ONn-g9-HNb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAdd:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="imI-aK-Iff"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mCA-pb-WHD" firstAttribute="top" secondItem="L90-GZ-YrA" secondAttribute="bottom" constant="31" id="B4P-dQ-FeX"/>
+                            <constraint firstItem="L90-GZ-YrA" firstAttribute="leading" secondItem="Ays-Xx-d85" secondAttribute="trailing" constant="43" id="G3r-3x-icd"/>
+                            <constraint firstItem="mCA-pb-WHD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="gQ5-k0-ZkA"/>
+                            <constraint firstItem="mCA-pb-WHD" firstAttribute="top" secondItem="Ays-Xx-d85" secondAttribute="bottom" constant="8" id="ghH-JX-uda"/>
+                            <constraint firstAttribute="centerX" secondItem="Ays-Xx-d85" secondAttribute="centerX" id="oUY-E7-EBG"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mCA-pb-WHD" secondAttribute="bottom" id="p3c-el-LFj"/>
+                            <constraint firstAttribute="trailing" secondItem="mCA-pb-WHD" secondAttribute="trailing" id="rXC-kP-RFl"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="numberKitView" destination="Ays-Xx-d85" id="tOV-NL-Onc"/>
+                        <outlet property="supConstraint" destination="p3c-el-LFj" id="ciO-05-ehg"/>
+                        <outlet property="superView" destination="mCA-pb-WHD" id="8ZY-cO-9Kn"/>
+                        <outlet property="textField" destination="kBu-2u-VFI" id="F8s-OJ-zrC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
